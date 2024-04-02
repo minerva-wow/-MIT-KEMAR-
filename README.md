@@ -1,5 +1,5 @@
 # 基于MIT-kemar数据集的虚拟声场
-能够实现简单的环绕空间声，暂时不考虑大小耳廓的影响
+能够实现简单的环绕空间声，使用正常耳廓，1通道的hrir
 
 过程性文档：
 1. 在matlab中使用websave从[Index of /data/database/mit (sofacoustics.org)](https://sofacoustics.org/data/database/mit/)下载数据集
