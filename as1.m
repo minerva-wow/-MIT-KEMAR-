@@ -27,7 +27,7 @@ end
 x_len = length(x_res);
 
 % 旋转角度
-angle_final = 720;
+angle = 720;
 % 每帧旋转的角度
 angle_per_frame = 5;
 % 旋转的帧数
