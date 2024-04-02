@@ -43,7 +43,7 @@ frames = frames .* win;
 %% 生成对应角度的HRIR矩阵索引，刚好在0-360度的方位角之间间隔5度采样，共72个点，暂时不考虑大小耳廓的影响
 index=261:1:332; 
 % 方向，1 为顺时针，0 为逆时针
-direction = 1;
+direction = 0;
 
 
 %% 生成虚拟环绕声
@@ -56,7 +56,7 @@ for i = 1:frame_num
     % 每一帧和对应的HRIR数据进行卷积
     y_frame = zeros(frame_len,2);
     y_frame(:,1) = conv(frames(:,i), reshape(hrirs(index(hrir_index),1,:),ir_len,1),"same");
-    y_frame(:,2) = conv(frames(:,i), reshape(hrirs(index(hrir_index),2,:),ir_len,1),"same");
+    y_frame(:,2) = conv(frames(:,i), reshape(hrirs(index(73-hrir_index),1,:),ir_len,1),"same");
     % 重叠相加
     y((i-1)*round(frame_len/2)+1:(i-1)*round(frame_len/2)+frame_len,:) = y((i-1)*round(frame_len/2)+1:(i-1)*round(frame_len/2)+frame_len,:) + y_frame; 
 end
